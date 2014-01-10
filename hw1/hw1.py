@@ -5,13 +5,13 @@ from sklearn.cross_validation import KFold
 
 def load_iris_data() :
 
-    # load the iris dataset from the sklearn module
+    # loads the iris dataset from the sklearn module
     iris = datasets.load_iris()
 
-    # extract the elements of the data that are used in this exercise
+    # extracts the elements of the data that are used in this exercise
     return (iris.data, iris.target, iris.target_names)
 
-def knn(X_train, y_train, k_neighbors = 3 ) :
+def knn(X_train, y_train, k_neighbors = 3) :
     #   function returns a kNN object
     #   useful methods of this object for this exercise:
     #   fit(X_train, y_train) --> fit the model using a training set
@@ -75,6 +75,15 @@ for (c_label, classifier) in classifiers_to_cv :
 
        print "fold <<%s>> :: acc <<%s>>" % (k_f, cv_a)
 
-
     print "Highest Accuracy: fold <<%s>> :: <<%s>>" % (best_k, best_cv_a)
 
+
+# 1 - Problem we are trying to solve 
+#-This script iterates through multiple folds using knn and Naive Bayes to find the model w#ith the highest accuracy
+
+#2 - Problems that may arise
+# Using such a large number of folds and folds of high numbers increases computational resources required, and shows minimal to no benefit i#n model accuracy
+
+#Thoughts for future - I would like to create another "for-loop" that optimizes the k in knn.  
+
+ 
